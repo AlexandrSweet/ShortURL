@@ -1,0 +1,17 @@
+<form class="userToReg" [formGroup]="userToRegForm" (submit)="onSubmit()">
+  <h2>Reg User</h2>
+
+  <label>
+    Login:
+    <input type="text" formControlName="login" />
+    <small *ngIf="isControlInvalid('login')">A 'login' value is required</small>
+  </label>
+  <label>
+    Password:
+    <input type="text" formControlName="password" />
+    <small *ngIf="isControlInvalid('password')">A 'Password' value is required</small>
+  </label>
+
+   <button type="submit" [disabled]="!userToRegForm.valid">Registration</button>
+  
+</form>
